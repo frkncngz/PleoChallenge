@@ -23,22 +23,30 @@ class Expenses extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentWillMount() {
+    this.props.getExpenses();
+  }
   onPress = expense => {
-    console.log(`${expense.id} tapped`);;
+    console.log(`${expense.id} tapped`);
   };
   render() {
     return (
       <BaseContainer>
-        <Text>Expenses</Text>
         <FlatList
           style={styles.list}
           data={this.props.expenses}
-          renderItem={({item}) => (
-            <ExpenseItem expense={item} onPress={this.onPress} />
-          )}
+          renderItem={({item, index}) => {
+            const colors = ['#ffb3ba', '#ffffba', '#baffc9', '#bae1ff'];
+            return (
+              <ExpenseItem
+                expense={item}
+                onPress={this.onPress}
+                backgroundColor={colors[index % 4]}
+              />
+            );
+          }}
           keyExtractor={item => item.id}
         />
-        <Button title="Get Expenses" onPress={this.props.getExpenses} />
       </BaseContainer>
     );
   }
