@@ -8,9 +8,6 @@ import styles from './styles';
 
 const ExpenseItem = props => {
   const {expense, onPress, backgroundColor} = props;
-  console.log('styles');
-  console.log(styles);
-  console.log('/styles');
   return (
     <TouchableOpacity style={styles.item} onPress={() => onPress(expense)}>
       <View style={styles.top}>

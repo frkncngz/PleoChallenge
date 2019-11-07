@@ -3,7 +3,14 @@ const reducer = (state = {}, action) => {
     case 'GET_EXPENSES':
       return {...state, loading: true};
     case 'EXPENSES_RECEIVED':
-      return {...state, expenses: action.expenses, loading: false};
+      return {
+        ...state,
+        expenses: state.expenses
+          ? state.expenses.concat(action.expenses)
+          : action.expenses,
+        totalExpenses: action.totalExpenses,
+        loading: false,
+      };
     default:
       return state;
   }

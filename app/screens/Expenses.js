@@ -51,10 +51,24 @@ class Expenses extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getExpenses();
+    this.fetchExpenses(true);
   }
 
-  onPress = expense => {  
+  fetchExpenses = cold => {
+    if (cold) {
+      this.props.getExpenses(25, 0);
+    } else {
+      const {expenses, totalExpenses} = this.props;
+      console.log('totalExpenses');
+      console.log(totalExpenses);
+      console.log('/totalExpenses');
+      if (expenses.length < totalExpenses) {
+        this.props.getExpenses(25, expenses.length);
+      }
+    }
+  };
+
+  onExpensePress = expense => {
     this.setModalVisible(!this.state.modalVisible, expense);
   };
 
@@ -81,19 +95,23 @@ class Expenses extends React.Component {
 
   render() {
     const {modalVisible, expense} = this.state;
-    const {expenses} = this.props;
+    const {expenses, loading} = this.props;
 
     return (
       <BaseContainer>
         <FlatList
           style={styles.list}
           data={expenses}
+          refreshing={loading}
+          onRefresh={() => this.fetchExpenses(true)}
+          onEndReachedThreshold={0.5}
+          onEndReached={() => this.fetchExpenses(false)}
           renderItem={({item, index}) => {
             const colors = ['#ffb3ba', '#ffffba', '#baffc9', '#bae1ff'];
             return (
               <ExpenseItem
                 expense={item}
-                onPress={this.onPress}
+                onPress={this.onExpensePress}
                 backgroundColor={colors[index % 4]}
               />
             );
@@ -124,6 +142,8 @@ class Expenses extends React.Component {
 
 const mapStateToProps = state => ({
   expenses: state.expenses || [],
+  totalExpenses: state.totalExpenses || 0,
+  loading: state.loading || false,
 });
 
 const mapDispatchToProps = {
