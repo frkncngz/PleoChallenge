@@ -217,6 +217,7 @@ PODS:
     - React-cxxreact (= 0.61.3)
     - React-jsi (= 0.61.3)
     - ReactCommon/jscallinvoker (= 0.61.3)
+  - SnapKit (4.2.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -247,11 +248,13 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - SnapKit
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - SnapKit
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -331,8 +334,9 @@ SPEC CHECKSUMS:
   React-RCTText: b8f895b94aa0e7778fef28d13f3d71eed4a10c3d
   React-RCTVibration: 262588c97551b0b1c675468cda857466ba5af18f
   ReactCommon: c2c63d9290b422ca6ad5b3663073a015dd892ae9
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Yoga: 02036f6383c0008edb7ef0773a0e6beb6ce82bd1
 
-PODFILE CHECKSUM: 6278aa07c8e76c37b70d83949d512997cfb178d1
+PODFILE CHECKSUM: 0413a7b1f887659d67fe7600af049ee70fc32c4b
 
 COCOAPODS: 1.8.3

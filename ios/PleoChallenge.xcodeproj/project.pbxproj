@@ -20,6 +20,10 @@
 		4656CD92679897D0D7DEBD9A /* libPods-PleoChallenge-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E08724884F00DFB6928C95 /* libPods-PleoChallenge-tvOS.a */; };
 		6A155D52403045A5CA545F22 /* libPods-PleoChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C3FE3DE76866DF77E4289 /* libPods-PleoChallengeTests.a */; };
 		BBB319A2BC2D53C08D5CC007 /* libPods-PleoChallenge-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09C662869D00236E0AA5EF /* libPods-PleoChallenge-tvOSTests.a */; };
+		DCCF59A523743F2300A418B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF59A423743F2300A418B6 /* UIColor.swift */; };
+		DCEFEF89237427E400660D43 /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFEF88237427E400660D43 /* AddCommentView.swift */; };
+		DCEFEF8B237429E900660D43 /* AddCommentViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */; };
+		DCEFEF8D23742A5A00660D43 /* AddCommentViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEFEF8C23742A5A00660D43 /* AddCommentViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,11 @@
 		8E2EA1025213CD6EE8C9F55E /* Pods-PleoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallenge.debug.xcconfig"; path = "Target Support Files/Pods-PleoChallenge/Pods-PleoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		92BF911D704203C713AD6F27 /* Pods-PleoChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-PleoChallengeTests/Pods-PleoChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E08724884F00DFB6928C95 /* libPods-PleoChallenge-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PleoChallenge-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCF59A423743F2300A418B6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		DCEFEF87237427E300660D43 /* PleoChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PleoChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCEFEF88237427E400660D43 /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
+		DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewManager.swift; sourceTree = "<group>"; };
+		DCEFEF8C23742A5A00660D43 /* AddCommentViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCommentViewManager.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +134,9 @@
 		13B07FAE1A68108700A75B9A /* PleoChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				DCEFEF87237427E300660D43 /* PleoChallenge-Bridging-Header.h */,
+				DCCF59A323743F0400A418B6 /* Extensions */,
+				DCEFEF86237427DA00660D43 /* Views */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -161,7 +173,6 @@
 				92BF911D704203C713AD6F27 /* Pods-PleoChallengeTests.debug.xcconfig */,
 				0166D4A3A8B7465AE00BA6BF /* Pods-PleoChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +207,26 @@
 				2D02E4901E0B4A5D006451C7 /* PleoChallenge-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DCCF59A323743F0400A418B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF59A423743F2300A418B6 /* UIColor.swift */,
+			);
+			name = Extensions;
+			path = PleoChallenge/Extensions;
+			sourceTree = "<group>";
+		};
+		DCEFEF86237427DA00660D43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCEFEF88237427E400660D43 /* AddCommentView.swift */,
+				DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */,
+				DCEFEF8C23742A5A00660D43 /* AddCommentViewManager.m */,
+			);
+			name = Views;
+			path = PleoChallenge/Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +323,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1100;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -308,6 +342,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -528,7 +563,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCEFEF8B237429E900660D43 /* AddCommentViewManager.swift in Sources */,
+				DCCF59A523743F2300A418B6 /* UIColor.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				DCEFEF89237427E400660D43 /* AddCommentView.swift in Sources */,
+				DCEFEF8D23742A5A00660D43 /* AddCommentViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92BF911D704203C713AD6F27 /* Pods-PleoChallengeTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -605,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0166D4A3A8B7465AE00BA6BF /* Pods-PleoChallengeTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PleoChallengeTests/Info.plist;
@@ -626,6 +667,7 @@
 			baseConfigurationReference = 8E2EA1025213CD6EE8C9F55E /* Pods-PleoChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = PleoChallenge/Info.plist;
@@ -637,6 +679,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PleoChallenge;
+				SWIFT_OBJC_BRIDGING_HEADER = "PleoChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -646,6 +691,7 @@
 			baseConfigurationReference = 76DBFDC33C3BD2B634603B24 /* Pods-PleoChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = PleoChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -656,6 +702,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PleoChallenge;
+				SWIFT_OBJC_BRIDGING_HEADER = "PleoChallenge-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
