@@ -12,11 +12,8 @@ import SnapKit
 class AddCommentView: UIView {
   
   private var titleLabel: UILabel!
-  private var titleSeparatorView: UIView!
   private var textView: UITextView!
-  private var buttonSeparatorView: UIView!
   private var addButton: UIButton!
-  private var betweenButtonsSeparatorView: UIView!
   private var closeButton: UIButton!
   
   @objc var onTextSubmit: RCTDirectEventBlock?
@@ -24,7 +21,17 @@ class AddCommentView: UIView {
   
   @objc var merchant: NSString = "" {
     didSet {
-      titleLabel.text = "Add Comment to \(merchant)"
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.alignment = .center
+      paragraphStyle.minimumLineHeight = 28
+                  
+      let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24),
+        NSAttributedString.Key.paragraphStyle: paragraphStyle,
+        NSAttributedString.Key.foregroundColor: UIColor(rgb:0x494949)]
+      let attrString = NSAttributedString(string:"Add Comment", attributes: attributes)
+      titleLabel.attributedText = attrString
+      
+      textView.placeholder = "Type here (\(merchant))..."
     }
   }
   
@@ -47,32 +54,30 @@ class AddCommentView: UIView {
     titleLabel.textAlignment = .center
     addSubview(titleLabel)
     
-    titleSeparatorView = separatorView()
-    addSubview(titleSeparatorView)
-    
     textView = UITextView()
+    textView.textContainerInset = UIEdgeInsets.init(top: 15, left: 15, bottom: 10, right: 15)
+    textView.backgroundColor = UIColor(rgb:0xefefef)
     textView.font = UIFont.systemFont(ofSize: 16)
+    textView.textColor = UIColor(rgb:0x494949)
     addSubview(textView)
     
-    buttonSeparatorView = separatorView()
-    addSubview(buttonSeparatorView)
-    
     addButton = UIButton(type: .custom)
-    addButton.setTitleColor(.black, for: .normal)
+    addButton.layer.cornerRadius = 6
+    addButton.backgroundColor = UIColor(rgb:0x74e09a)
+    addButton.setTitleColor(.white, for: .normal)
+    addButton.titleLabel!.font = UIFont.boldSystemFont(ofSize: 18)
     addSubview(addButton)
     
-    betweenButtonsSeparatorView = separatorView()
-    addSubview(betweenButtonsSeparatorView)
-    
     closeButton = UIButton(type: .custom)
-    closeButton.setTitleColor(.black, for: .normal)
+    closeButton.setTitleColor(UIColor(rgb:0x494949), for: .normal)
+    closeButton.titleLabel!.font = UIFont.boldSystemFont(ofSize: 18)
     addSubview(closeButton)
     
     // MARK: ui
     setNeedsUpdateConstraints()
     
     // MARK: localization
-    addButton.setTitle("Add Comment", for: .normal)
+    addButton.setTitle("Submit", for: .normal)
     closeButton.setTitle("Close", for: .normal)
     
     // MARK: bindings
@@ -87,40 +92,24 @@ class AddCommentView: UIView {
   // MARK: - UI
   override func updateConstraints() {
     titleLabel.snp.updateConstraints { (make) in
-      make.top.equalTo(self).offset(10)
+      make.top.equalTo(self).offset(20)
       make.leading.trailing.equalTo(self)
-    }
-    titleSeparatorView.snp.updateConstraints { (make) in
-      make.top.equalTo(titleLabel.snp.bottom).offset(10)
-      make.leading.equalTo(self).offset(5)
-      make.trailing.equalTo(self).offset(-5)
-      make.height.equalTo(0.5)
     }
     textView.snp.updateConstraints { (make) in
-      make.top.equalTo(titleSeparatorView.snp.bottom).offset(5)
-      make.leading.trailing.equalTo(self)
-    }
-    buttonSeparatorView.snp.updateConstraints { (make) in
-      make.top.equalTo(textView.snp.bottom).offset(5)
-      make.leading.trailing.height.equalTo(titleSeparatorView)
+      make.top.equalTo(titleLabel.snp.bottom).offset(20)
+      make.height.equalTo(120)
+      make.leading.equalTo(self).offset(15)
+      make.trailing.equalTo(self).offset(-15)
     }
     addButton.snp.updateConstraints { (make) in
-      make.height.equalTo(40)
-      make.leading.equalTo(self)
-      make.centerY.equalTo(betweenButtonsSeparatorView)
-      make.trailing.equalTo(betweenButtonsSeparatorView.snp.leading)
-    }
-    betweenButtonsSeparatorView.snp.updateConstraints { (make) in
-      make.top.equalTo(buttonSeparatorView.snp.bottom).offset(5)
-      make.bottom.equalTo(self).offset(-5)
-      make.width.equalTo(0.5)
-      make.height.equalTo(40)
-      make.centerX.equalTo(self)
+      make.top.equalTo(textView.snp.bottom).offset(32)
+      make.height.equalTo(50)
+      make.leading.equalTo(self).offset(40)
+      make.trailing.equalTo(self).offset(-40)
     }
     closeButton.snp.updateConstraints { (make) in
-      make.height.centerY.equalTo(addButton)
-      make.leading.equalTo(betweenButtonsSeparatorView.snp.trailing)
-      make.trailing.equalTo(self)
+      make.top.equalTo(addButton.snp.bottom)
+      make.height.leading.trailing.equalTo(addButton)
     }
     super.updateConstraints()
   }

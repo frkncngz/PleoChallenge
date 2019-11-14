@@ -2,19 +2,23 @@ import React from 'react';
 import {
   FlatList,
   Modal,
+  Dimensions,
   KeyboardAvoidingView,
-  Alert,
   requireNativeComponent,
   UIManager,
   findNodeHandle,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {connect} from 'react-redux';
+import ImagePicker from 'react-native-image-picker';
 
-import {getExpenses} from '../actions/index';
+import config from '../config';
+import i18n from '../locales/i18n';
+import {getExpenses, updateExpense, uploadReceipt} from '../actions/index';
 
 // Components
 import BaseContainer from '../components/Global/Container';
+import NavigationTitle from '../components/Global/NavigationTitle';
 import ExpenseItem from '../components/Expenses/ExpenseItem';
 const AddCommentView = requireNativeComponent('AddCommentView');
 
@@ -23,29 +27,41 @@ const styles = EStyleSheet.create({
     flex: 1,
   },
   contentContainer: {flex: 1},
-  item: {
-    flex: 1,
-  },
   modal: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#b3b3b3aa',
+    backgroundColor: '#00000099',
   },
   commentView: {
-    // flex: 1,
-    height: 300,
+    height: 335,
     width: '80%',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  gallery: {
+    height: 300,
+    width: '80%',
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  item: {
+    width: (Dimensions.get('window').width * 0.8) / 3,
+    height: (Dimensions.get('window').width * 0.8) / 3,
+  },
 });
 
 class Expenses extends React.Component {
+  static navigationOptions = ({navigation}) => ({
+    headerTitle: <NavigationTitle title={i18n.t('home')} />,
+  });
+
   state = {
     modalVisible: false,
   };
+
   constructor(props) {
     super(props);
   }
@@ -59,20 +75,21 @@ class Expenses extends React.Component {
       this.props.getExpenses(25, 0);
     } else {
       const {expenses, totalExpenses} = this.props;
-      console.log('totalExpenses');
-      console.log(totalExpenses);
-      console.log('/totalExpenses');
       if (expenses.length < totalExpenses) {
         this.props.getExpenses(25, expenses.length);
       }
     }
   };
 
-  onExpensePress = expense => {
-    this.setModalVisible(!this.state.modalVisible, expense);
+  setComment = e => {
+    const {comment} = e.nativeEvent;
+    const {expense} = this.state;
+    this.props.updateExpense(expense.id, comment);
+    this.setCommentModalVisible(false);
   };
 
-  setModalVisible(visible, expense) {
+  // Modals
+  setCommentModalVisible(visible, expense) {
     this.setState({modalVisible: visible, expense}, () => {
       if (visible) {
         UIManager.dispatchViewManagerCommand(
@@ -83,14 +100,44 @@ class Expenses extends React.Component {
       }
     });
   }
-
-  setComment = e => {
-    const {comment} = e.nativeEvent;
-    this.setModalVisible(false);
+  closeCommentModal = e => {
+    this.setCommentModalVisible(false);
   };
 
-  closeModal = e => {
-    this.setModalVisible(false);
+  // Actions
+  onAddCommentPress = expense => {
+    // this.setState({expense});
+    this.setCommentModalVisible(!this.state.modalVisible, expense);
+  };
+
+  onAddReceiptPress = expense => {
+    this.setState({expense});
+
+    const options = {
+      title: i18n.t('chooseAnOption'),
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+
+    ImagePicker.showImagePicker(options, response => {
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+        this.props.uploadReceipt(expense.id, response);
+      }
+    });
+  };
+
+  onShowReceiptsPress = expense => {
+    this.props.navigation.navigate('Receipts', {
+      receipts: expense.receipts.map(r => {
+        return `${config.apiUrl}${r.url}`;
+      }),
+    });
   };
 
   render() {
@@ -111,26 +158,22 @@ class Expenses extends React.Component {
             return (
               <ExpenseItem
                 expense={item}
-                onPress={this.onExpensePress}
+                onAddCommentPress={this.onAddCommentPress}
+                onAddReceiptPress={this.onAddReceiptPress}
+                onShowReceiptsPress={this.onShowReceiptsPress}
                 backgroundColor={colors[index % 4]}
               />
             );
           }}
           keyExtractor={item => item.id}
         />
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            Alert.alert('Modal has been closed.');
-          }}>
+        <Modal animationType="fade" transparent={true} visible={modalVisible}>
           <KeyboardAvoidingView style={styles.modal} behavior="padding" enabled>
             <AddCommentView
               style={styles.commentView}
               merchant={expense ? expense.merchant : null}
               onTextSubmit={this.setComment}
-              onClose={this.closeModal}
+              onClose={this.closeCommentModal}
               ref={e => (this.addCommentViewRef = e)}
             />
           </KeyboardAvoidingView>
@@ -147,7 +190,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getExpenses: getExpenses,
+  getExpenses,
+  updateExpense,
+  uploadReceipt,
 };
 
 Expenses = connect(

@@ -20,6 +20,12 @@
 		4656CD92679897D0D7DEBD9A /* libPods-PleoChallenge-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E08724884F00DFB6928C95 /* libPods-PleoChallenge-tvOS.a */; };
 		6A155D52403045A5CA545F22 /* libPods-PleoChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230C3FE3DE76866DF77E4289 /* libPods-PleoChallengeTests.a */; };
 		BBB319A2BC2D53C08D5CC007 /* libPods-PleoChallenge-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D09C662869D00236E0AA5EF /* libPods-PleoChallenge-tvOSTests.a */; };
+		DC28AFF0237D973D006F2297 /* ReceiptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28AFEF237D973D006F2297 /* ReceiptsView.swift */; };
+		DC28AFF2237D9887006F2297 /* ReceiptsViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28AFF1237D9887006F2297 /* ReceiptsViewManager.swift */; };
+		DC28AFF4237D98BC006F2297 /* ReceiptsViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC28AFF3237D98BC006F2297 /* ReceiptsViewManager.m */; };
+		DC28AFF6237D9E3C006F2297 /* ReceiptsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28AFF5237D9E3C006F2297 /* ReceiptsViewTableViewCell.swift */; };
+		DC848214237DA03C003B0AF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC848213237DA03C003B0AF3 /* Constants.swift */; };
+		DC9377D7237DBEF200FF880C /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9377D6237DBEF200FF880C /* UITextView.swift */; };
 		DCCF59A523743F2300A418B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF59A423743F2300A418B6 /* UIColor.swift */; };
 		DCEFEF89237427E400660D43 /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFEF88237427E400660D43 /* AddCommentView.swift */; };
 		DCEFEF8B237429E900660D43 /* AddCommentViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */; };
@@ -65,10 +71,32 @@
 		2D09C662869D00236E0AA5EF /* libPods-PleoChallenge-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PleoChallenge-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EB0E20A5C0967FC197131A /* libPods-PleoChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PleoChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		470C845D824FC31D4BB7B3E8 /* Pods-PleoChallenge-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallenge-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PleoChallenge-tvOSTests/Pods-PleoChallenge-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		517205DDB9734513BD48C916 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		64B1AB8F366244E4A10F6929 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		76BB35882E6B47E5B27C9681 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		76DBFDC33C3BD2B634603B24 /* Pods-PleoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallenge.release.xcconfig"; path = "Target Support Files/Pods-PleoChallenge/Pods-PleoChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		82E7EE862C434871BB73EE79 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		8E2EA1025213CD6EE8C9F55E /* Pods-PleoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallenge.debug.xcconfig"; path = "Target Support Files/Pods-PleoChallenge/Pods-PleoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		9261AAC96D404CC98ADE768E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		92BF911D704203C713AD6F27 /* Pods-PleoChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PleoChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-PleoChallengeTests/Pods-PleoChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		939C343BC7BB4B1C86EF8594 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		96E08724884F00DFB6928C95 /* libPods-PleoChallenge-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PleoChallenge-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		970DFED0C8A84E309F962700 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		AABB296976F640FD9B80406F /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		ADED0068FC1E4E69B96D7DBA /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		B354D29698314EE191363216 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		B558AA46D32A4CFBB8842AE8 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		BABF6F58870E46549F553620 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		C22B4DE091794FC894F9F53F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		C87B990ED1DC4A92BC7AF4B7 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		CD86EB78DC1A46DF9D909F21 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		D46BA545ED6F4B54BCAD68C6 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		DC28AFEF237D973D006F2297 /* ReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsView.swift; sourceTree = "<group>"; };
+		DC28AFF1237D9887006F2297 /* ReceiptsViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewManager.swift; sourceTree = "<group>"; };
+		DC28AFF3237D98BC006F2297 /* ReceiptsViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptsViewManager.m; sourceTree = "<group>"; };
+		DC28AFF5237D9E3C006F2297 /* ReceiptsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewTableViewCell.swift; sourceTree = "<group>"; };
+		DC848213237DA03C003B0AF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC9377D6237DBEF200FF880C /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		DCCF59A423743F2300A418B6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DCEFEF87237427E300660D43 /* PleoChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PleoChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		DCEFEF88237427E400660D43 /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
@@ -144,6 +172,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				DC848213237DA03C003B0AF3 /* Constants.swift */,
 			);
 			name = PleoChallenge;
 			sourceTree = "<group>";
@@ -192,6 +221,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				6E53D11A85898E7BD8942091 /* Pods */,
+				870FB6A68DD2494B81FE64DE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -209,10 +239,55 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		870FB6A68DD2494B81FE64DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AABB296976F640FD9B80406F /* AntDesign.ttf */,
+				76BB35882E6B47E5B27C9681 /* Entypo.ttf */,
+				517205DDB9734513BD48C916 /* EvilIcons.ttf */,
+				82E7EE862C434871BB73EE79 /* Feather.ttf */,
+				C87B990ED1DC4A92BC7AF4B7 /* FontAwesome.ttf */,
+				9261AAC96D404CC98ADE768E /* FontAwesome5_Brands.ttf */,
+				CD86EB78DC1A46DF9D909F21 /* FontAwesome5_Regular.ttf */,
+				D46BA545ED6F4B54BCAD68C6 /* FontAwesome5_Solid.ttf */,
+				B558AA46D32A4CFBB8842AE8 /* Fontisto.ttf */,
+				B354D29698314EE191363216 /* Foundation.ttf */,
+				64B1AB8F366244E4A10F6929 /* Ionicons.ttf */,
+				C22B4DE091794FC894F9F53F /* MaterialCommunityIcons.ttf */,
+				970DFED0C8A84E309F962700 /* MaterialIcons.ttf */,
+				939C343BC7BB4B1C86EF8594 /* Octicons.ttf */,
+				BABF6F58870E46549F553620 /* SimpleLineIcons.ttf */,
+				ADED0068FC1E4E69B96D7DBA /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DC28AFED237D85BA006F2297 /* Add Comment */ = {
+			isa = PBXGroup;
+			children = (
+				DCEFEF88237427E400660D43 /* AddCommentView.swift */,
+				DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */,
+				DCEFEF8C23742A5A00660D43 /* AddCommentViewManager.m */,
+			);
+			path = "Add Comment";
+			sourceTree = "<group>";
+		};
+		DC28AFEE237D85DC006F2297 /* Receipts */ = {
+			isa = PBXGroup;
+			children = (
+				DC28AFEF237D973D006F2297 /* ReceiptsView.swift */,
+				DC28AFF1237D9887006F2297 /* ReceiptsViewManager.swift */,
+				DC28AFF3237D98BC006F2297 /* ReceiptsViewManager.m */,
+				DC28AFF5237D9E3C006F2297 /* ReceiptsViewTableViewCell.swift */,
+			);
+			path = Receipts;
+			sourceTree = "<group>";
+		};
 		DCCF59A323743F0400A418B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DCCF59A423743F2300A418B6 /* UIColor.swift */,
+				DC9377D6237DBEF200FF880C /* UITextView.swift */,
 			);
 			name = Extensions;
 			path = PleoChallenge/Extensions;
@@ -221,9 +296,8 @@
 		DCEFEF86237427DA00660D43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DCEFEF88237427E400660D43 /* AddCommentView.swift */,
-				DCEFEF8A237429E900660D43 /* AddCommentViewManager.swift */,
-				DCEFEF8C23742A5A00660D43 /* AddCommentViewManager.m */,
+				DC28AFEE237D85DC006F2297 /* Receipts */,
+				DC28AFED237D85BA006F2297 /* Add Comment */,
 			);
 			name = Views;
 			path = PleoChallenge/Views;
@@ -261,6 +335,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				F33FA98AABBE1EDFCAB88D28 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,7 +391,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -510,6 +585,54 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F33FA98AABBE1EDFCAB88D28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PleoChallenge/Pods-PleoChallenge-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PleoChallenge/Pods-PleoChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,6 +687,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCEFEF8B237429E900660D43 /* AddCommentViewManager.swift in Sources */,
+				DC9377D7237DBEF200FF880C /* UITextView.swift in Sources */,
+				DC848214237DA03C003B0AF3 /* Constants.swift in Sources */,
+				DC28AFF2237D9887006F2297 /* ReceiptsViewManager.swift in Sources */,
+				DC28AFF0237D973D006F2297 /* ReceiptsView.swift in Sources */,
+				DC28AFF6237D9E3C006F2297 /* ReceiptsViewTableViewCell.swift in Sources */,
+				DC28AFF4237D98BC006F2297 /* ReceiptsViewManager.m in Sources */,
 				DCCF59A523743F2300A418B6 /* UIColor.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				DCEFEF89237427E400660D43 /* AddCommentView.swift in Sources */,
