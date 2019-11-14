@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import Agrume
 
 class ReceiptsView: UIView {
   
@@ -28,11 +29,15 @@ class ReceiptsView: UIView {
     super.init(frame: frame)
         
     // MARK: setup
-    backgroundColor = .white
+    backgroundColor = UIColor(rgb:0xf8f8f8)
     
     tableView = UITableView()
+    tableView.backgroundColor = UIColor(rgb:0xf8f8f8)
+    tableView.separatorStyle = .none
     tableView.dataSource = self
     tableView.delegate = self
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 300
     tableView.register(ReceiptsViewTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ReceiptsViewTableViewCell.self))
     tableView.tableFooterView = UIView()
     addSubview(tableView)
@@ -74,6 +79,30 @@ extension ReceiptsView: UITableViewDataSource {
 
 extension ReceiptsView: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 200
+    return 300
   }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    guard let urlString = receipts[indexPath.row] as? String else {
+      return
+    }
+    guard let url = URL(string: urlString) else {
+      return
+    }
+        
+    ImageDownloader.default.downloadImage(with: url, retrieveImageTask: nil, options: nil, progressBlock: nil) { (image, error, url, data) in
+      if let image = image {
+        let button = UIBarButtonItem(barButtonSystemItem: .stop, target: nil, action: nil)
+        button.tintColor = .white
+        let agrume = Agrume(image: image, background: .colored(UIColor.black.withAlphaComponent(0.8)), dismissal: .withButton(button))
+        agrume.show(from: self.parentViewController!)
+      }
+    }
+  }
+}
+
+extension UIResponder {
+    public var parentViewController: UIViewController? {
+        return next as? UIViewController ?? next?.parentViewController
+    }
 }

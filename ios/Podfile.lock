@@ -1,4 +1,6 @@
 PODS:
+  - Agrume (5.3.2):
+    - SwiftyGif
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.61.3)
@@ -231,10 +233,11 @@ PODS:
   - RNVectorIcons (6.6.0):
     - React
   - SnapKit (4.2.0)
-  - "UITextView+Placeholder (1.3.3)"
+  - SwiftyGif (5.2.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
+  - Agrume
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -270,15 +273,15 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - SnapKit (~> 4.2.0)
-  - "UITextView+Placeholder"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - Agrume
     - boost-for-react-native
     - Kingfisher
     - SnapKit
-    - "UITextView+Placeholder"
+    - SwiftyGif
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -345,6 +348,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Agrume: 171c1d1079324195c7ce04af4c7a66d86a9cf952
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 5bc5b1606fc9a7ac6956de049f6e30901ed31c49
@@ -378,9 +382,9 @@ SPEC CHECKSUMS:
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
+  SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
   Yoga: 02036f6383c0008edb7ef0773a0e6beb6ce82bd1
 
-PODFILE CHECKSUM: 910dafc25fab0ac8a28d076562fef6310e32e6da
+PODFILE CHECKSUM: a344a05db69c3602de694006161161153709732a
 
 COCOAPODS: 1.8.3

@@ -37,7 +37,8 @@ target 'PleoChallenge' do
   # Custom Integrations
   # UI
   pod 'SnapKit', '~> 4.2.0'
-  pod 'Kingfisher', '~> 4.10.1'  
+  pod 'Kingfisher', '~> 4.10.1'
+  pod "Agrume"  
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
