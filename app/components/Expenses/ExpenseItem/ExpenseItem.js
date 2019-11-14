@@ -52,7 +52,6 @@ const ExpenseItem = props => {
           style={styles.receiptRow}
           onPress={() => onShowReceiptsPress(expense)}>
           <Icon
-            style={{}}
             name="attachment"
             size={15}
             color={EStyleSheet.value('$greyishBrown')}
@@ -67,7 +66,7 @@ const ExpenseItem = props => {
         </TouchableOpacity>
       ) : null}
 
-      {expense.comment != '' ? (
+      {expense.comment !== '' ? (
         <View style={styles.commentRow}>
           <Icon
             style={{}}
@@ -75,7 +74,7 @@ const ExpenseItem = props => {
             size={15}
             color={EStyleSheet.value('$greyishBrown')}
           />
-          <Text style={styles.comment}>"{expense.comment}"</Text>
+          <Text style={styles.comment}>{expense.comment}</Text>
         </View>
       ) : null}
 

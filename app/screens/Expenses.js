@@ -92,10 +92,12 @@ class Expenses extends React.Component {
     super(props);
   }
 
+  // Lifecycle
   componentWillMount() {
     this.fetchExpenses(true);
   }
 
+  // Redux
   fetchExpenses = cold => {
     if (cold) {
       this.props.getExpenses(25, 0);
@@ -130,7 +132,7 @@ class Expenses extends React.Component {
     this.setCommentModalVisible(false);
   };
 
-  // Actions
+  // Handlers
   onAddCommentPress = expense => {
     // this.setState({expense});
     this.setCommentModalVisible(!this.state.modalVisible, expense);
@@ -223,7 +225,7 @@ class Expenses extends React.Component {
           onEndReachedThreshold={0.5}
           onEndReached={() => this.fetchExpenses(false)}
           renderItem={({item, index}) => {
-            const colors = ['#ffb3ba', '#ffffba', '#baffc9', '#bae1ff'];
+            const colors = ['#ffb3ba', '#ffffba', '#baffc9', '#bae1ff']; // just for the sake of UI
             return (
               <ExpenseItem
                 expense={item}
