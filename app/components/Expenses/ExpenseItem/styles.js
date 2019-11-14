@@ -5,7 +5,6 @@ const styles = EStyleSheet.create({
   item: {
     flex: 1,
     margin: 18,
-
     borderRadius: 2,
     backgroundColor: '$white',
     shadowColor: 'rgba(0, 0, 0, 0.06)',

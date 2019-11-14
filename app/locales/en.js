@@ -7,4 +7,5 @@ export default {
   addReceipt: 'ADD RECEIPT',
   addComment: 'ADD COMMENT',
   chooseAnOption: 'Choose An Option',
+  typeToFilter: 'Type to filter',
 };

@@ -7,4 +7,5 @@ export default {
   addReceipt: 'FİŞ EKLE',
   addComment: 'YORUM EKLE',
   chooseAnOption: 'Bir seçim yapın',
+  typeToFilter: 'Filtrelemek için',
 };

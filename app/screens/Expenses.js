@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  View,
+  TextInput,
   FlatList,
   Modal,
   Dimensions,
@@ -11,6 +13,7 @@ import {
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {connect} from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
+import Fuse from 'fuse.js';
 
 import config from '../config';
 import i18n from '../locales/i18n';
@@ -26,7 +29,30 @@ const styles = EStyleSheet.create({
   container: {
     flex: 1,
   },
-  contentContainer: {flex: 1},
+  searchContainer: {
+    marginTop: 20,
+    height: 40,
+    shadowColor: 'rgba(0, 0, 0, 0.06)',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowRadius: 13,
+    shadowOpacity: 1,
+  },
+  searchInput: {
+    flex: 1,
+    backgroundColor: '$white',
+    marginHorizontal: 20,
+    borderRadius: 2,
+    paddingHorizontal: 10,
+  },
+  search: {
+    flex: 1,
+  },
+  list: {
+    marginTop: 10,
+  },
   modal: {
     flex: 1,
     flexDirection: 'column',
@@ -140,15 +166,58 @@ class Expenses extends React.Component {
     });
   };
 
+  onSearchChangeText = keyword => {
+    const {expenses} = this.props;
+    // this.setState({keyword});
+    console.log('expenses');
+    console.log(expenses);
+    console.log('/expenses');
+
+    console.log('keyword');
+    console.log(keyword);
+    console.log('/keyword');
+
+    var options = {
+      shouldSort: true,
+      threshold: 0.2,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: [
+        'merchant',
+        'amount.value',
+        'comment',
+        'category',
+        'user.first',
+        'user.last',
+        'user.email',
+      ],
+    };
+    var fuse = new Fuse(expenses, options); // "list" is the item array
+    var filteredExpenses = fuse.search(keyword);
+    this.setState({filteredExpenses});
+  };
+
   render() {
-    const {modalVisible, expense} = this.state;
+    const {modalVisible, expense, keyword, filteredExpenses} = this.state;
     const {expenses, loading} = this.props;
 
     return (
       <BaseContainer>
+        <View style={styles.searchContainer}>
+          <View style={styles.searchInput}>
+            <TextInput
+              style={styles.search}
+              onChangeText={text => this.onSearchChangeText(text)}
+              placeholder={i18n.t('typeToFilter')}
+              value={keyword}
+            />
+          </View>
+        </View>
         <FlatList
           style={styles.list}
-          data={expenses}
+          data={filteredExpenses ? filteredExpenses : expenses}
           refreshing={loading}
           onRefresh={() => this.fetchExpenses(true)}
           onEndReachedThreshold={0.5}
